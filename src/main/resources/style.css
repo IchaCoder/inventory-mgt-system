@@ -4,20 +4,19 @@
 }
 
 .topBar {
-    -fx-background-color: #ADD8E6;
+    -fx-background-color: #b3dec1;
 }
 
-#leftBar {
-    -fx-background-color: #ADD8E680;
+#leftBar, .welcome {
+    -fx-background-color: #44D875;
 }
 
 .sideBarBtns {
-    -fx-background-color: #ADD8E6;
+    -fx-background-color: #b3dec1;
     -fx-font-size: 14px;
 }
 
 #homeBtn {
-    -fx-background-color: #ADD8E680;
     -fx-font-size: 14px;
 }
 
@@ -26,7 +25,7 @@
 }
 
 .homeCard {
-    -fx-background-color: #ADD8E6;
+    -fx-background-color: #b3dec1;
     -fx-font-size: 14px;
 }
 
@@ -49,6 +48,5 @@
 }
 
 #handleAddDrug {
-    -fx-background-color: #69C8E7;
-    -fx-font-size: 14;
+    -fx-background-color: #b3dec1;
 }

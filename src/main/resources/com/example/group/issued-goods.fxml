@@ -11,7 +11,7 @@
 <VBox prefHeight="418.0" prefWidth="564.0" stylesheets="@../../../style2.css" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group.InvoiceController">
 
       <children>
-         <Label styleClass="printInvoice" text="Print Invoice">
+         <Label styleClass="printInvoice" text="Issued Goods">
          <VBox.margin>
             <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
          </VBox.margin></Label>
@@ -23,19 +23,13 @@
             <VBox prefHeight="400.0" prefWidth="100.0" styleClass="invoiceChild">
                <children>
                   <HBox>
-                     <children>
-                        <Label styleClass="pharm" text="Pharm19" />
-                        <Label layoutX="10.0" layoutY="10.0" styleClass="pharm" text="Invoice #20-513" />
-                     </children>
                      <VBox.margin>
                         <Insets bottom="10.0" left="30.0" right="30.0" top="30.0" />
                      </VBox.margin>
                   </HBox>
                   <HBox layoutX="40.0" layoutY="40.0" styleClass="billHeading">
                      <children>
-                        <Label text="BILL TO" />
                         <Region minWidth="250.0" prefHeight="27.0" />
-                        <Label layoutX="10.0" layoutY="10.0" text="Date:" />
                      </children>
                      <VBox.margin>
                         <Insets left="30.0" right="30.0" />
@@ -43,22 +37,13 @@
                   </HBox>
                   <HBox>
                      <children>
-                        <Label layoutX="40.0" layoutY="131.0" text="Customer Name: Sylvester" />
                         <Region prefHeight="17.0" prefWidth="166.0" />
-                        <Label text="09/07/23">
-                           <VBox.margin>
-                              <Insets left="30.0" />
-                           </VBox.margin>
-                        </Label>
                      </children>
                      <VBox.margin>
                         <Insets left="30.0" right="30.0" />
                      </VBox.margin>
                   </HBox>
                   <HBox layoutX="40.0" layoutY="101.0">
-                     <children>
-                        <Label layoutX="40.0" layoutY="131.0" text="Phone: 0545748584" />
-                     </children>
                      <VBox.margin>
                         <Insets left="30.0" top="5.0" />
                      </VBox.margin>
@@ -71,7 +56,7 @@
                         <TableColumn fx:id="amount" minWidth="100.0" prefWidth="75.0" text="Amount (GHC)" />
                     </columns>
                      <VBox.margin>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        <Insets />
                      </VBox.margin>
                   </TableView>
                </children>

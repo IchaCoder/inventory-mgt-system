@@ -11,55 +11,25 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 import static java.lang.Integer.parseInt;
 
-public class SalesController implements Initializable {
+public class AddGoodController implements Initializable {
 
-    public class Sales {
-        private String drugName, category;
-        private int id, quantity;
-
-        public Sales(String drugName, String category, int id, int quantity) {
-            this.drugName = drugName;
-            this.category = category;
-            this.id = id;
-            this.quantity = quantity;
-        }
-
-        public String getName() {
-            return drugName;
-        }
-
-        public String getCategory() {
-            return category;
-        }
-
-        public int getId() {
-            return id;
-        }
-
-        public int getQuantity() {
-            return quantity;
-        }
-    }
+    ObservableList<Goods> data;
+    @FXML
+    private TableView<Goods> drugsTable;
 
     @FXML
-    private TableView<Sales> salesTable;
-
+    private TableColumn<Goods, String> name;
     @FXML
-    private TableColumn<Sales, String> name;
+    private TableColumn<Goods, String> category;
     @FXML
-    private TableColumn<Sales, String> category;
+    private TableColumn<Goods, Integer> id;
     @FXML
-    private TableColumn<Sales, Integer> id;
-    @FXML
-    private TableColumn<Sales, Integer> quantity;
+    private TableColumn<Goods, Integer> quantity;
 
     @FXML
     ComboBox categoryInput;
@@ -68,7 +38,7 @@ public class SalesController implements Initializable {
     @FXML
     TextField quantityInput;
 
-    public void handleAddDrug () {
+    public void handleAddGood () {
         String category = categoryInput.getValue().toString();
         String name = nameInput.getText();
         int quantity = parseInt(quantityInput.getText());
@@ -76,7 +46,7 @@ public class SalesController implements Initializable {
         try {
             DatabaseConnection connectNow = new DatabaseConnection();
             Connection connectDB = connectNow.getConnection();
-            String selectQuery = "INSERT INTO sales(name, category, quantity) VALUES (?,?,?)";
+            String selectQuery = "INSERT INTO drugs(name, category, quantity) VALUES (?,?,?)";
 
             PreparedStatement preparedStatement = connectDB.prepareStatement(selectQuery, PreparedStatement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1,name);
@@ -92,6 +62,9 @@ public class SalesController implements Initializable {
                     int id = generatedKeys.getInt(1);
                     System.out.println("New ID for the Drugs row: " + id);
 
+                    // Add the new Drugs object with the generated ID to the observable list
+                    data = FXCollections.observableArrayList();
+                    data.add(new Goods(name, id, category, quantity));
                 }
             } else {
                 System.out.println("Failed to add item to MySQL table.");
@@ -108,12 +81,13 @@ public class SalesController implements Initializable {
 
     }
 
-    private ObservableList<Sales> fetchDataFromMySQL() {
-        ObservableList<Sales> data = FXCollections.observableArrayList();
+
+    private ObservableList<Goods> fetchDataFromMySQL() {
+        data = FXCollections.observableArrayList();
         try {
             DatabaseConnection connectNow = new DatabaseConnection();
             Connection connectDB = connectNow.getConnection();
-            String selectQuery = "SELECT * FROM sales";
+            String selectQuery = "SELECT * FROM drugs";
 
             PreparedStatement preparedStatement = connectDB.prepareStatement(selectQuery);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -123,9 +97,8 @@ public class SalesController implements Initializable {
                 int id = resultSet.getInt("id");
                 String category = resultSet.getString("category");
                 int quantity = resultSet.getInt("quantity");
-                data.add(new Sales(name, category, id, quantity));
-                System.out.println(name);
-                System.out.println(id);
+                data.add(new Goods(name, id, category, quantity));
+
             }
 
             resultSet.close();
@@ -137,13 +110,14 @@ public class SalesController implements Initializable {
         return data;
     }
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        name.setCellValueFactory(new PropertyValueFactory<Sales, String>("name"));
-        id.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("id"));
-        category.setCellValueFactory(new PropertyValueFactory<Sales, String>("category"));
-        quantity.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("quantity"));
+        name.setCellValueFactory(new PropertyValueFactory<Goods, String>("name"));
+        id.setCellValueFactory(new PropertyValueFactory<Goods, Integer>("id"));
+        category.setCellValueFactory(new PropertyValueFactory<Goods, String>("category"));
+        quantity.setCellValueFactory(new PropertyValueFactory<Goods, Integer>("quantity"));
 
-        salesTable.setItems(fetchDataFromMySQL());
+        drugsTable.setItems(fetchDataFromMySQL());
     }
 }

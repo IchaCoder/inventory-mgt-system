@@ -17,7 +17,7 @@
          <children>
             <Label styleClass="dashboardLabel" text="Dashboard" />
             <Region prefHeight="25.0" prefWidth="174.0" />
-            <TextField id="search" promptText="Search Drug..." />
+            <TextField id="search" promptText="Search Product..." />
          </children>
          <padding>
             <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
@@ -27,7 +27,7 @@
    <left>
       <VBox fx:id="leftBar" alignment="TOP_CENTER" prefHeight="333.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="homeBtn" mnemonicParsing="false" onAction="#handleWelcomeClick" prefWidth="400.0" text="Welcome">
+            <Button id="homeBtn" mnemonicParsing="false" onAction="#handleWelcomeClick" prefWidth="400.0" styleClass="welcome" text="Welcome Admin">
                <padding>
                   <Insets bottom="10.0" top="10.0" />
                </padding>
@@ -35,19 +35,19 @@
                   <Font name="SansSerif Regular" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="20.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleAddDrug" prefWidth="400.0" styleClass="sideBarBtns" text="Add Drugs">
+            <Button layoutX="20.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleAddGood" prefWidth="400.0" styleClass="sideBarBtns" text="Add Goods">
                <padding>
                   <Insets bottom="10.0" top="10.0" />
                </padding>
                <graphic>
                   <ImageView fitHeight="47.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/Pill_1.png" />
+                        <Image url="@../../../images/Add.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="20.0" layoutY="70.0" mnemonicParsing="false" onAction="#handleSaleClick" prefWidth="400.0" styleClass="sideBarBtns" text="Sale">
+            <Button layoutX="20.0" layoutY="70.0" mnemonicParsing="false" onAction="#handleViewBills" prefWidth="400.0" styleClass="sideBarBtns" text="View Bills">
                <padding>
                   <Insets bottom="10.0" top="10.0" />
                </padding>
@@ -59,19 +59,19 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="20.0" layoutY="110.0" mnemonicParsing="false" onAction="#handlePurchaseHistoryClick" prefWidth="400.0" styleClass="sideBarBtns" text="Purchase History">
+            <Button layoutX="20.0" layoutY="110.0" mnemonicParsing="false" onAction="#handleVendors" prefWidth="400.0" styleClass="sideBarBtns" text="View Vendors">
                <padding>
                   <Insets bottom="10.0" top="10.0" />
                </padding>
                <graphic>
                   <ImageView fitHeight="21.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/Checkout.png" />
+                        <Image url="@../../../images/Book.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="15.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleInvoiceClick" prefWidth="400.0" styleClass="sideBarBtns" text="Invoice">
+            <Button layoutX="15.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleIssuedGoods" prefWidth="400.0" styleClass="sideBarBtns" text="Issued Goods">
                <padding>
                   <Insets bottom="10.0" top="10.0" />
                </padding>

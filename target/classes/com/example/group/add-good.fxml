@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.collections.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
@@ -9,13 +10,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.collections.FXCollections?>
 
-<VBox prefHeight="418.0" prefWidth="535.0" stylesheets="@../../../style.css" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group.AddDrugController">
+<VBox prefHeight="418.0" prefWidth="535.0" stylesheets="@../../../style.css" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group.AddGoodController">
    <children>
       <HBox>
          <children>
-            <Label minWidth="80.0" styleClass="addDrugHeader" text="Add Drug" HBox.hgrow="ALWAYS" />
+            <Label minWidth="80.0" styleClass="addDrugHeader" text="Add Goods" HBox.hgrow="ALWAYS" />
             <Region prefWidth="200.0" />
-            <Label layoutX="10.0" layoutY="10.0" styleClass="addDrugHeader2" text="Drug stock as on 30/06/2026" />
          </children>
          <VBox.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -33,24 +33,35 @@
                   <ComboBox fx:id="categoryInput" layoutX="30.0" layoutY="52.0" prefWidth="150.0" promptText="Choose Category" styleClass="addDrugCombo">
                      <items>
                         <FXCollections fx:factory="observableArrayList">
-                           <String fx:value="Pain Killer" />
-                           <String fx:value="Dewormer" />
-                           <String fx:value="Blood Tonic" />
+                           <String fx:value="Beverages" />
+                           <String fx:value="Bread/Bakery" />
+                           <String fx:value="Canned/Jarred Goods" />
+                           <String fx:value="Dairy Products" />
+                           <String fx:value="Dry/Baking Goods" />
+                           <String fx:value="Frozen Products" />
+                           <String fx:value="Meat" />
+                           <String fx:value="Farm Produce" />
+                           <String fx:value="Home Cleaners" />
+                           <String fx:value="Paper Goods" />
+                           <String fx:value="Home Care" />
                         </FXCollections>
                      </items>
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
                   </ComboBox>
-                  <Label layoutX="30.0" layoutY="97.0" text="Medicine">
+                  <Label layoutX="30.0" layoutY="97.0" text="Product Name">
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField fx:id="nameInput" promptText="Enter quantity">
+                  <TextField fx:id="nameInput" promptText="Enter good name">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
                   </TextField>
                   <Label layoutX="30.0" layoutY="164.0" text="Quantity">
                      <VBox.margin>
@@ -62,7 +73,7 @@
                         <Insets top="5.0" />
                      </VBox.margin>
                   </TextField>
-                  <Button id="handleAddDrug" mnemonicParsing="false" onAction="#handleAddDrug" text="Add">
+                  <Button id="handleAddDrug" mnemonicParsing="false" onAction="#handleAddGood" text="Add">
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>

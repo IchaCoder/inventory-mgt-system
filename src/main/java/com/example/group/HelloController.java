@@ -4,15 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 import static java.lang.Integer.parseInt;
 
@@ -24,26 +20,6 @@ public class HelloController {
     @FXML
     private BorderPane mainPane;
 
-//    public void connectButton(ActionEvent event) {
-//        DatabaseConnection connectNow = new DatabaseConnection();
-//        Connection connectDB = connectNow.getConnection();
-////        String connectQuery = "SELECT drug_name FROM drugs";
-//        String connectQuery = "SELECT id FROM drugs";
-//
-//        try {
-//            Statement statement = connectDB.createStatement();
-//            ResultSet queryOutput = statement.executeQuery(connectQuery);
-//            while (queryOutput.next()) {
-//                int fetchedName = parseInt(queryOutput.getString("id"));
-//                System.out.println(fetchedName);
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
-
-
     public void handleWelcomeClick (ActionEvent event) throws IOException {
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("home");
@@ -51,32 +27,31 @@ public class HelloController {
         System.out.println("You clicked me");
     }
 
-    public void handleAddDrug (ActionEvent event) throws IOException {
-        AddDrugController addDrug = new AddDrugController();
+    public void handleAddGood (ActionEvent event) throws IOException {
+        AddGoodController addGood = new AddGoodController();
         FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("add-drug");
-        mainPane.setCenter(view);
-//        addDrug.updateTable();
-        System.out.println("You clicked me");
-    }
-
-    public void handleSaleClick (ActionEvent event) throws IOException {
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("sale");
+        Pane view = object.getPage("add-good");
         mainPane.setCenter(view);
         System.out.println("You clicked me");
     }
 
-    public void handlePurchaseHistoryClick (ActionEvent event) throws IOException {
+    public void handleViewBills (ActionEvent event) throws IOException {
         FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("purchase-history");
+        Pane view = object.getPage("view-bills");
         mainPane.setCenter(view);
         System.out.println("You clicked me");
     }
 
-    public void handleInvoiceClick (ActionEvent event) throws IOException {
+    public void handleVendors(ActionEvent event) throws IOException {
         FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("invoice");
+        Pane view = object.getPage("vendors");
+        mainPane.setCenter(view);
+        System.out.println("You clicked me");
+    }
+
+    public void handleIssuedGoods(ActionEvent event) throws IOException {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("issued-goods");
         mainPane.setCenter(view);
         System.out.println("You clicked me");
     }

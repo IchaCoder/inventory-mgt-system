@@ -15,25 +15,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class PurchaseHistoryController implements Initializable {
+public class VendorsController implements Initializable {
+
+
 
     @FXML
-    private TableColumn<PurchaseHistory, Double> amount;
+    private TableView<Vendors> purchaseHistoryTable;
 
     @FXML
-    private TableColumn<PurchaseHistory, String> drugPurchased;
+    private TableColumn<Vendors, Integer> id;
 
     @FXML
-    private TableView<PurchaseHistory> purchaseHistoryTable;
+    private TableColumn<Vendors, String> customerName;
 
-    @FXML
-    private TableColumn<PurchaseHistory, Integer> quantity;
-
-    @FXML
-    private TableColumn<PurchaseHistory, String> customerName;
-
-    private ObservableList<PurchaseHistory> fetchDataFromMySQL() {
-        ObservableList<PurchaseHistory> data = FXCollections.observableArrayList();
+    private ObservableList<Vendors> fetchDataFromMySQL() {
+        ObservableList<Vendors> data = FXCollections.observableArrayList();
         try {
             DatabaseConnection connectNow = new DatabaseConnection();
             Connection connectDB = connectNow.getConnection();
@@ -44,10 +40,8 @@ public class PurchaseHistoryController implements Initializable {
 
             while (resultSet.next()) {
                 String customerName = resultSet.getString("customer_name");
-                double amount = resultSet.getDouble("amount");
-                String drugPurchased = resultSet.getString("drug_purchased");
-                int quantity = resultSet.getInt("quantity");
-                data.add(new PurchaseHistory(drugPurchased, customerName, quantity, amount));
+                int id = resultSet.getInt("id");
+                data.add(new Vendors(customerName,id));
             }
 
             resultSet.close();
@@ -62,10 +56,8 @@ public class PurchaseHistoryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        amount.setCellValueFactory(new PropertyValueFactory<PurchaseHistory, Double>("amount"));
-        drugPurchased.setCellValueFactory(new PropertyValueFactory<PurchaseHistory, String>("drugPurchased"));
-        customerName.setCellValueFactory(new PropertyValueFactory<PurchaseHistory, String>("customerName"));
-        quantity.setCellValueFactory(new PropertyValueFactory<PurchaseHistory, Integer>("quantity"));
+        customerName.setCellValueFactory(new PropertyValueFactory<Vendors, String>("customerName"));
+        id.setCellValueFactory(new PropertyValueFactory<Vendors, Integer>("id"));
 
         purchaseHistoryTable.setItems(fetchDataFromMySQL());
     }

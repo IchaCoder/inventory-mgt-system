@@ -1,10 +1,10 @@
 package com.example.group;
 
-public class Drugs {
+public class Goods {
     private String name, category;
     private int id, quantity;
 
-    public Drugs(String name, int id, String category, int quantity) {
+    public Goods(String name, int id, String category, int quantity) {
         this.name = name;
         this.category = category;
         this.id = id;
