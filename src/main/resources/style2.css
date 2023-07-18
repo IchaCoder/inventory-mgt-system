@@ -1,0 +1,49 @@
+
+#salesLabel1, #purchaseLabel {
+    -fx-font-size: 16px;
+}
+
+.saleInput {
+    -fx-background-color: #D6ECF380;
+}
+
+#salesBox, .invoiceMain {
+    -fx-border-width: 1;
+    -fx-border-color: rgba(0,0,0,.5);
+    -fx-border-radius: 10px;
+}
+
+.code {
+    -fx-font-weight: bold;
+}
+
+.addPurchaseHead {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+#addPurchase {
+    -fx-background-color: #69C8E7;
+    -fx-font-size: 14;
+}
+
+.purchases {
+    -fx-background-color: #1A3C6F;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.printInvoice, .pharm {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.invoiceChild {
+    -fx-background-color: #EDF6F9;
+}
+
+.billHeading {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}

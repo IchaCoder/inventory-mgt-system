@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="467.0" prefWidth="744.0" stylesheets="@../../../style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group.HelloController">
+   <top>
+      <HBox spacing="30.0" styleClass="topBar" BorderPane.alignment="TOP_LEFT">
+         <children>
+            <Label styleClass="dashboardLabel" text="Dashboard" />
+            <Region prefHeight="25.0" prefWidth="174.0" />
+            <TextField id="search" promptText="Search Drug..." />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <VBox fx:id="leftBar" alignment="TOP_CENTER" prefHeight="333.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="homeBtn" mnemonicParsing="false" onAction="#handleWelcomeClick" prefWidth="400.0" text="Welcome">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font name="SansSerif Regular" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="20.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleAddDrug" prefWidth="400.0" styleClass="sideBarBtns" text="Add Drugs">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/Pill_1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="20.0" layoutY="70.0" mnemonicParsing="false" onAction="#handleSaleClick" prefWidth="400.0" styleClass="sideBarBtns" text="Sale">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/sale.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="20.0" layoutY="110.0" mnemonicParsing="false" onAction="#handlePurchaseHistoryClick" prefWidth="400.0" styleClass="sideBarBtns" text="Purchase History">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/Checkout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="15.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleInvoiceClick" prefWidth="400.0" styleClass="sideBarBtns" text="Invoice">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/Invoice.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="50.0" BorderPane.alignment="CENTER">
+         <children>
+            <FlowPane hgap="50.0" styleClass="flowPane" vgap="20.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" styleClass="homeCard">
+                     <children>
+                        <Label id="totalCustomers" text="10" />
+                        <Label text="Total Customers" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0" styleClass="homeCard">
+                     <children>
+                        <Label id="totalSuppliers" text="7" />
+                        <Label text="Total Suppliers" />
+                     </children>
+                  </HBox>
+               </children>
+            </FlowPane>
+            <FlowPane hgap="50.0" layoutX="30.0" layoutY="30.0" styleClass="flowPane">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" styleClass="homeCard">
+                     <children>
+                        <Label id="totalStocks" text="0" />
+                        <Label text="Total Number of stocks" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" styleClass="homeCard">
+                     <children>
+                        <Label id="totalMedicine" text="7" />
+                        <Label text="Total Medicine" />
+                     </children>
+                  </HBox>
+               </children>
+            </FlowPane>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

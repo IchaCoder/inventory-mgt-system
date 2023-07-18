@@ -1,0 +1,54 @@
+.dashboardLabel {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.topBar {
+    -fx-background-color: #ADD8E6;
+}
+
+#leftBar {
+    -fx-background-color: #ADD8E680;
+}
+
+.sideBarBtns {
+    -fx-background-color: #ADD8E6;
+    -fx-font-size: 14px;
+}
+
+#homeBtn {
+    -fx-background-color: #ADD8E680;
+    -fx-font-size: 14px;
+}
+
+.flowPane {
+
+}
+
+.homeCard {
+    -fx-background-color: #ADD8E6;
+    -fx-font-size: 14px;
+}
+
+#totalCustomers, #totalSuppliers {
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+.addDrugHeader {
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+.addDrugHeader2 {
+    -fx-font-size: 16px;
+}
+
+.addDrugCombo {
+    -fx-background-color: #D6ECF380;
+}
+
+#handleAddDrug {
+    -fx-background-color: #69C8E7;
+    -fx-font-size: 14;
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+
+<VBox prefHeight="418.0" prefWidth="535.0" stylesheets="@../../../style.css" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group.AddDrugController">
+   <children>
+      <HBox>
+         <children>
+            <Label minWidth="80.0" styleClass="addDrugHeader" text="Add Drug" HBox.hgrow="ALWAYS" />
+            <Region prefWidth="200.0" />
+            <Label layoutX="10.0" layoutY="10.0" styleClass="addDrugHeader2" text="Drug stock as on 30/06/2026" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox layoutX="30.0" layoutY="30.0" prefHeight="352.0" prefWidth="467.0" spacing="20.0">
+         <children>
+            <VBox prefHeight="300.0" prefWidth="180.0">
+               <children>
+                  <Label layoutX="30.0" layoutY="30.0" text="Category:">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ComboBox fx:id="categoryInput" layoutX="30.0" layoutY="52.0" prefWidth="150.0" promptText="Choose Category" styleClass="addDrugCombo">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Pain Killer" />
+                           <String fx:value="Dewormer" />
+                           <String fx:value="Blood Tonic" />
+                        </FXCollections>
+                     </items>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <Label layoutX="30.0" layoutY="97.0" text="Medicine">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="nameInput" promptText="Enter quantity">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label layoutX="30.0" layoutY="164.0" text="Quantity">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="quantityInput" promptText="Enter quantity">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button id="handleAddDrug" mnemonicParsing="false" onAction="#handleAddDrug" text="Add">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+                     </padding>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </VBox>
+            <TableView fx:id="drugsTable" prefHeight="200.0" prefWidth="350.0">
+              <columns>
+                <TableColumn fx:id="name" prefWidth="75.0" text="name" />
+                <TableColumn fx:id="id" prefWidth="50.0" text="id" />
+                  <TableColumn fx:id="category" prefWidth="90.0" text="category" />
+                  <TableColumn fx:id="quantity" prefWidth="90.0" text="quantity" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
+   </children>
+
+</VBox>
