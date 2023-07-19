@@ -46,7 +46,7 @@ public class AddGoodController implements Initializable {
         try {
             DatabaseConnection connectNow = new DatabaseConnection();
             Connection connectDB = connectNow.getConnection();
-            String selectQuery = "INSERT INTO drugs(name, category, quantity) VALUES (?,?,?)";
+            String selectQuery = "INSERT INTO goods(name, category, quantity) VALUES (?,?,?)";
 
             PreparedStatement preparedStatement = connectDB.prepareStatement(selectQuery, PreparedStatement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1,name);

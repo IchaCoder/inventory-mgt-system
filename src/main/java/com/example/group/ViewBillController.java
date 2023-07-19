@@ -62,7 +62,7 @@ public class ViewBillController implements Initializable {
         try {
             DatabaseConnection connectNow = new DatabaseConnection();
             Connection connectDB = connectNow.getConnection();
-            String selectQuery = "SELECT * FROM sales";
+            String selectQuery = "SELECT * FROM bills";
 
             PreparedStatement preparedStatement = connectDB.prepareStatement(selectQuery);
             ResultSet resultSet = preparedStatement.executeQuery();

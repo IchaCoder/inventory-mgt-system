@@ -33,7 +33,7 @@ public class VendorsController implements Initializable {
         try {
             DatabaseConnection connectNow = new DatabaseConnection();
             Connection connectDB = connectNow.getConnection();
-            String selectQuery = "SELECT * FROM purchase_history";
+            String selectQuery = "SELECT * FROM vendors";
 
             PreparedStatement preparedStatement = connectDB.prepareStatement(selectQuery);
             ResultSet resultSet = preparedStatement.executeQuery();

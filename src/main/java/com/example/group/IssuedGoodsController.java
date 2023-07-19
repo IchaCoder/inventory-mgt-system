@@ -65,7 +65,7 @@ public class IssuedGoodsController implements Initializable {
         try {
             DatabaseConnection connectNow = new DatabaseConnection();
             Connection connectDB = connectNow.getConnection();
-            String selectQuery = "SELECT * FROM invoice";
+            String selectQuery = "SELECT * FROM issued_goods";
 
             PreparedStatement preparedStatement = connectDB.prepareStatement(selectQuery);
             ResultSet resultSet = preparedStatement.executeQuery();
